@@ -14,7 +14,7 @@ body {
 	font-size: 16px;
 	position: relative;
 	text-decoration: none;
-	height: 75px;
+	height: 70px;
 	line-height: 75px;
 	width: 100%;
 	margin: 0 auto;
@@ -25,7 +25,6 @@ body {
 	position: absolute;
 	width: 34px;
 	height: 21px;
-	top: 20px;
 	left: 20px;
 }
 
@@ -86,10 +85,11 @@ body {
 	border-radius: 4px; 
 	color: white;
 	background-color: #DB532D;
+
+
 	font-size: 15px;
 	font-family: Lato;
 	box-shadow:none;
-	margin-left: 17px; 
 }
 
 
@@ -101,7 +101,6 @@ body {
 	border-radius: 4px; 
 	font-family: Lato;
 	box-shadow:none;
-	margin-left:17px;
 	border:1px solid #bdbdbd;
 	padding: 0 8px;
 }
@@ -116,6 +115,7 @@ body {
 	border-radius: 4px; 
 	font-family: Lato;
 	border:1px solid #bdbdbd;
+	box-sizing: border-box;
 	padding: 0 10px;
 	margin-left: 17px;
 }
@@ -165,7 +165,6 @@ body {
 	float: right;
 	width: 500px;
 	height: 50px;
-	line-height: 50px;
 }
 
 .filterContainer .filter, .filterContainer .entries {
