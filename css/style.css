@@ -90,6 +90,10 @@ header {
 	box-shadow:none;
 }
 
+ button img{
+ 	text-align: center; 
+
+}
 
 .content .buttonsContent form select {
 	border-right-style: none;
@@ -195,7 +199,7 @@ hr {
     color: #DB532D;
 }
 /*-----------------------------------------------------CLOSE CONTAINER----------------------------------*/
-/*-----------------------------------------------------OPEN CONTENT----------------------------------*/
+/*-------------------------------------------------------OPEN CONTENT-----------------------------------*/
 
 .informationContent .descriptionInformation {
     box-sizing: border-box;
