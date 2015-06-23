@@ -9,12 +9,33 @@ and open the template in the editor.
 			<title>Work Force Planning</title>
 			<meta charset="UTF-8">
 			<link rel="stylesheet" href="css/style.css" type="text/css" />
-
+			<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 			<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 		</head>
 
+<!--script-->
+		<script type="text/javascript">
+			$(function() {
+				$('.edit, .down').click(function(e) {
+					e.preventDefault();
+					if($(this).parents('.nameInformation').children('.moreInfo').is(":visible")) {
+						$(this).parents('.nameInformation').children('.moreInfo').hide();
+					} else {
+						$(this).parents('.nameInformation').children('.moreInfo').show();
+					}
+				});
+			});
+	 
+ 
+		</script>
+<!--script-->
+
+
+
+
+
 		<body>
-	  		<div class = "header">	
+	  		<header>
 
 				<div class="leftHeader">
 					<img src="images/menuicon.jpg"> 
@@ -34,7 +55,7 @@ and open the template in the editor.
 					</div>
 					<div class="clear"></div>
 				</div>
-			</div>	
+			</header>	
 
 			<div class="clear"></div>
 
@@ -70,160 +91,168 @@ and open the template in the editor.
 			</div>	
 
 		<div class="warp">
-<!-- container employees -->
-			<div class ="container">
-				<div class= "dataContainer">
-					Employees
-				</div>
-<!-- container form -->
-				<div class="filterContainer">
-					<form>
+        <!-- container employees -->
+        <div class="container">
+            <div class="dataContainer">
+                Employees
+            </div>
+            <!-- container form -->
+            <div class="filterContainer">
+                <form>
 
-						<div class="filter">
-							<select >
-								<option disabled selected>Filter by Blah blah</option>
-								<option>Job 1</option>
-								<option>Job 2</option>
-								<option>Job 3</option>
-								<option>Job 4</option>
-								<option>Job 5</option>
-								<option>Job 6</option>
-							</select>
-						</div>
-							
-						<div class = "enteries">
-							<select >
-								<option disabled selected>Show: </option>
-								<option>10 enteries</option>
-								<option>20 enteries</option>
-								<option>30 enteries</option>
-								<option>40 enteries</option>
-								<option>50 enteries</option>
-								<option>60 enteries</option>
-							</select>
-						</div>
+                    <div class="filter">
+                        <select>
+                            <option disabled selected>Filter by Blah blah</option>
+                            <option>Job 1</option>
+                            <option>Job 2</option>
+                            <option>Job 3</option>
+                            <option>Job 4</option>
+                            <option>Job 5</option>
+                            <option>Job 6</option>
+                        </select>
+                    </div>
 
-					</form>
-				</div>
-			</div>
+                    <div class="enteries">
+                        <select>
+                            <option disabled selected>Show: </option>
+                            <option>10 enteries</option>
+                            <option>20 enteries</option>
+                            <option>30 enteries</option>
+                            <option>40 enteries</option>
+                            <option>50 enteries</option>
+                            <option>60 enteries</option>
+                        </select>
+                    </div>
 
-			<div class="clear"></div>
-			
-			<div class="informationContent">
+                </form>
+            </div>
+        </div>
 
-	<!-- line - information -->
-				<div class="descriptionInformation">
-					<ul>
-						<li>Full Name</li>
-						<li>Job Title</li>
-						<li>Grade</li>
-						<li>Allocation status</li>
-						<li>Project</li>
-						<li>Date of booking</li>
-					</ul>
-					<div class="clear"></div>
-				</div>
-	<!-- line - name  / can repeat-->
-				<div class="nameInformation">
-					<ul>
-						<li>dorel</li>
-						<li>muncitooorrr</li>
-						<li>bossss</li>
-						<li>alocat</li>
-						<li>pavaje</li>
-						<li>10/10/1010</li>
-						<img src="images/down.png">	
-						<img src="images/pencil.png"> 
-					</ul> 
-				</div>
-	<!-- line - details test -->
-				<div class="clear"></div>
-				<hr>
-	 				<div class="infoText">
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Delivery Unit:</div>
-	                    <div class="rightText">ISD_Iasi</div>
-	                    <div class="clear"></div>
-	                  </div>
-	                  
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Date of start:</div>
-	                    <div class="rightText">12 / 03 / 2015</div>
-	                    <div class="clear"></div>
-	                  </div>
-	                  
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Line manager:</div>
-	                    <div class="rightText">Bogdan Volonsincu</div>
-	                    <div class="clear"></div>
-	                  </div>
-	                  
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Project Manager  </div>
-	                    <div class="rightText">Andrei Ursache</div>
-	                    <div class="clear"></div>
-	                  </div>										
-					</div>
-	<!-- line - button -->	
-					<div class="infoButton">
-						<form>   
-							<button type="submit" class="active"> Active button </button>
-							<button type="submit"> Inactive button </button>
-						</form>	
-					</div>
-	                <div class="clear"></div> 
-				<hr> 
-<!-------------------------------------------------------------------------------------------------------------------------repeat-->
+        <div class="clear"></div>
 
-				<div class="nameInformation">
-					<ul>
-						<li>numeeeeee</li>
-						<li>jooobbbb</li>
-						<li>gradeee</li>
-						<li>allocatioooonn</li>
-						<li>projecttttt</li>
-						<li>dateee</li>
-						<img src="images/down.png">	
-						<img src="images/pencil.png"> 
-					</ul> 
-				</div>
-	 
-				<div class="clear"></div>
-				<hr>
-	 				<div class="infoText">
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Delivery Unit:</div>
-	                    <div class="rightText">ISD_Iasi</div>
-	                    <div class="clear"></div>
-	                  </div>
-	                  
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Date of start:</div>
-	                    <div class="rightText">12 / 03 / 2015</div>
-	                    <div class="clear"></div>
-	                  </div>
-	                  
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Line manager:</div>
-	                    <div class="rightText">Bogdan Volonsincu</div>
-	                    <div class="clear"></div>
-	                  </div>
-	                  
-	                  <div class="infoTextItem">
-	                    <div class="leftText">Project Manager  </div>
-	                    <div class="rightText">Andrei Ursache</div>
-	                    <div class="clear"></div>
-	                  </div>										
-					</div>
-	 
-					<div class="infoButton">
-						<form>   
-							<button type="submit" class="active"> Active button </button>
-							<button type="submit"> Inactive button </button>
-						</form>	
-					</div>
-	                <div class="clear"></div> 
-				<hr> 
+        <div class="informationContent">
+
+            <!-- line - information -->
+            <div class="descriptionInformation">
+                <ul>
+                    <li>Full Name</li>
+                    <li>Job Title</li>
+                    <li>Grade</li>
+                    <li>Allocation status</li>
+                    <li>Project</li>
+                    <li>Date of booking</li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!-- line - name  / can repeat-->
+            <div class="nameInformation">
+                <ul>
+                    <li>dorel</li>
+                    <li>muncitooorrr</li>
+                    <li>bossss</li>
+                    <li>alocat</li>
+                    <li>pavaje</li>
+                    <li>10/10/1010</li>
+                    <a href="#" class="down"><img src="images/down.png"> </a>
+                    <a href="#" class="edit"><img src="images/pencil.png"> </a>
+                </ul>
+                <div class="clear"></div>
+                <div class="moreInfo">
+                  <hr>
+                  <div class="infoText">
+                      <div class="infoTextItem">
+                          <div class="leftText">Delivery Unit:</div>
+                          <div class="rightText">ISD_Iasi</div>
+                          <div class="clear"></div>
+                      </div>
+
+                      <div class="infoTextItem">
+                          <div class="leftText">Date of start:</div>
+                          <div class="rightText">12 / 03 / 2015</div>
+                          <div class="clear"></div>
+                      </div>
+
+                      <div class="infoTextItem">
+                          <div class="leftText">Line manager:</div>
+                          <div class="rightText">Bogdan Volonsincu</div>
+                          <div class="clear"></div>
+                      </div>
+
+                      <div class="infoTextItem">
+                          <div class="leftText">Project Manager </div>
+                          <div class="rightText">Andrei Ursache</div>
+                          <div class="clear"></div>
+                      </div>
+                  </div>
+                  <!-- line - button -->
+                  <div class="infoButton">
+                      <form>
+                          <button type="submit" class="active"> Active button </button>
+                          <button type="submit"> Inactive button </button>
+                      </form>
+                  </div>
+                  <div class="clear"></div>
+              </div>
+            </div>
+            <!-- line - details test -->
+            <div class="clear"></div>
+            
+            <hr>
+<!---repeat-->
+
+            <div class="nameInformation">
+                <ul>
+                    <li>numeeeeee</li>
+                    <li>jooobbbb</li>
+                    <li>gradeee</li>
+                    <li>allocatioooonn</li>
+                    <li>projecttttt</li>
+                    <li>dateee</li>
+                    <a href="#"><img class="down" src="images/down.png"> </a>
+                    <a href="#"><img class="edit" src="images/pencil.png"> </a>
+                </ul>
+                <div class="clear"></div>
+                <div class="moreInfo">
+                  <hr>
+                  <div class="infoText">
+                      <div class="infoTextItem">
+                          <div class="leftText">Delivery Unit:</div>
+                          <div class="rightText">ISD_Iasi</div>
+                          <div class="clear"></div>
+                      </div>
+
+                      <div class="infoTextItem">
+                          <div class="leftText">Date of start:</div>
+                          <div class="rightText">12 / 03 / 2015</div>
+                          <div class="clear"></div>
+                      </div>
+
+                      <div class="infoTextItem">
+                          <div class="leftText">Line manager:</div>
+                          <div class="rightText">Bogdan Volonsincu</div>
+                          <div class="clear"></div>
+                      </div>
+
+                      <div class="infoTextItem">
+                          <div class="leftText">Project Manager </div>
+                          <div class="rightText">Andrei Ursache</div>
+                          <div class="clear"></div>
+                      </div>
+                  </div>
+
+                  <div class="infoButton">
+                      <form>
+                          <button type="submit" class="active"> Active button </button>
+                          <button type="submit"> Inactive button </button>
+                      </form>
+                  </div>
+                  <div class="clear"></div>
+              </div>
+            </div>
+
+            <div class="clear"></div>
+            
+            <hr>
 <!--stop repeat-->
 		</div><!--close warp-->
 <!-- footer -->
