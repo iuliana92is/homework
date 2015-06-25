@@ -12,10 +12,8 @@ body {
 /*-----------------------------------------------------HEADER----------------------------------*/
 header {
     font-size: 16px;
-    position: relative;
     text-decoration: none;
     height: 70px;
-    line-height: 75px;
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -23,13 +21,12 @@ header {
  
 .leftHeader{
     float: left;
-    width: 35%;
+    width: 10%;
     padding-left: 20px;
-    line-height: 100%;
 }
 
 .centerHeader{  
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
     font-size: 30px;
@@ -44,6 +41,7 @@ header {
     right: 0px; 
     top: 0px;
     padding-right: 20px;
+      line-height: 135px;
 }
 
 .rightHeader .info, .rightHeader .avatar {
@@ -61,6 +59,7 @@ header {
     width: 100%;
     background-color: #E3E3E3;
 }
+
 
 .content .buttonsContent {
     box-sizing: border-box;
@@ -107,7 +106,7 @@ header {
     box-shadow:none;
     border:1px solid #bdbdbd;
     padding: 0 8px;
-    margin-top: 10px;
+    margin: 10px 16px 0px 16px;
 
 }
 
@@ -373,16 +372,48 @@ footer .paginare li.active a {
 
 /*------------------------------------------------------responsive-----------------------------------*/
 
-@media only screen and (min-width: 1px) and (max-width: 320px){
+@media only screen and (min-width: 1px) and (max-width: 360px){
 
     header {
         display: inline-block;
         float: left;
+        margin-top: 25px;
+        height: 50px;
     }
-  
-    .centerHeader {
+    
+    .rightHeader{
+        float: right;
+        position: absolute;
+        right: 0px;
+        top: 15px;
+        padding-right: 20px;
+        line-height: 0px; 
+    }
+    .centerHeader p{
         width: auto;
-        font-size: 20px;
+        font-size: 10px;
+        margin-top: 25px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+
+    }
+    .centerHeader img{
+        width:22px;
+    }
+
+    .rightHeader .info, .rightHeader .avatar {
+        width: 0px;
+        padding-right: 25px;
+    }
+
+    .rightHeader .info, .rightHeader .info {
+        width: 0px;
+        padding-right: 35px;
+    }
+     
+
+    .rightHeader img{
+        width:35px;
     }
 
     .container, .wrap {
