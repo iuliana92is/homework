@@ -5,93 +5,114 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-		<head>
-			<title>Work Force Planning</title>
-			<meta charset="UTF-8">
-			<link rel="stylesheet" href="css/style.css" type="text/css" />
-			<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-			<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-		</head>
+
+<head>
+    <title>Work Force Planning</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
 
 <!--script-->
-		<script type="text/javascript">
-			$(function() {
-				$('.edit, .down').click(function(e) {
-					e.preventDefault();
-					if($(this).parents('.nameInformation').children('.moreInfo').is(":visible")) {
-						$(this).parents('.nameInformation').children('.moreInfo').hide();
-					} else {
-						$(this).parents('.nameInformation').children('.moreInfo').show();
-					}
-				});
-			});
-	 
- 
-		</script>
+<script type="text/javascript">
+//start function
+  var init = function() { 
+    var table = document.getElementById("nameInformation");
+    //iterare
+    //http://www.w3schools.com/js/js_strings.asp
+
+    rows = '';
+
+    for (var i = 0; i < data.length ; i++) {
+      rows = rows + '<ul>\
+                  <li>' + data[i]['fullName'] + '</li>\
+                  <li>' + data[i]['jobTitle'] + '</li>\
+                  <li>' + data[i]['grade'] + '</li>\
+                  <li>' + data[i]['allocationStatus'] + '</li>\
+                  <li>' + data[i]['project'] + '</li>\
+                  <li>' + data[i]['date'] + '</li>\
+                  <img src="../images/down.png">\
+                  <img src="../images/pencil.png">\
+                </ul>\
+                <hr>'
+    }
+    
+    table.innerHTML = rows;
+    
+  }
+ //stop function 
+</script>
 <!--stop script-->
 
- <!--header-->
-		<body>
-	  		<header>
+<!--header-->
 
-				<div class="leftHeader">
-					<img src="images/menuicon.png"> 
-				</div>
+<body onload="init()"> <!-- http://stackoverflow.com/questions/22808245/cant-body-onload-init-function -->
+    <header>
 
-				<div class="centerHeader"> 
-					<p><img src="images/titleicon.png">Work Force Planning</p>
-				</div>
+        <div class="leftHeader">
+            <img src="images/menuicon.png">
+        </div>
 
-
-				<div class="rightHeader">
-					<div class="info">
-						<img src="images/avatar1icon.png">
-					</div>
-					<div class="avatar">
-						<img src="images/avatar2icon.png">
-					</div>
-					<div class="clear"></div>
-				</div>
-			</header>	
-
-			<div class="clear"></div>
-
-<!--stop header-->		 
-
-<!--content-->
-			<div class = "content">
-
-				<div class = "buttonsContent">
-		 			<form>  
-	 					<input type="text" name="username" value="Name" size = "20">
-					 	<select >
-							<option disabled selected>Allocated</option>
-							<option>Not Allocated</option>
-							<option>Some other option</option>
-						</select>
-
-						<select >
-							<option disabled selected>Joburi</option>
-							<option>Job 1</option>
-							<option>Job 2</option>
-						</select>
+        <div class="centerHeader">
+            <img src="images/titleicon.png">
+            <p>Work Force Planning</p>
+            <div class="clear"></div>
+        </div>
 
 
-						<button type="search"  ><img src="images/search.png"> search </button>
-					</form>	
-				</div>	
+        <div class="rightHeader">
+            <div class="info">
+                <img src="images/avatar1icon.png">
+            </div>
+            <div class="avatar">
+                <img src="images/avatar2icon.png">
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+
+    <div class="clear"></div>
+
+    <!--stop header-->
+
+    <!--content-->
+    <div class="content">
+
+        <div class="buttonsContent">
+            <form>
+                <input type="text" name="username" value="Name" size="20">
+                <select>
+                    <option disabled selected>Allocated</option>
+                    <option>Not Allocated</option>
+                    <option>Some other option</option>
+                </select>
+
+                <select>
+                    <option disabled selected>Joburi</option>
+                    <option>Job 1</option>
+                    <option>Job 2</option>
+                </select>
 
 
-				<div class = "menuContent">
-					<p>Advanced filters</p>
-				</div>	
+                <button type="search"><img src="images/search.png"> search </button>
+            </form>
+        </div>
 
-			</div>	
-<!--stop content-->
 
-<!--wrap-->
-		<div class="wrap">
+        <div class="menuContent">
+            <p>Advanced filters</p>
+        </div>
+
+    </div>
+    <!--stop content-->
+
+    <!--wrap-->
+    <div class="wrap">
         <!-- container employees -->
         <div class="container">
             <div class="dataContainer">
@@ -130,491 +151,41 @@ and open the template in the editor.
         </div>
 
         <div class="clear"></div>
+        
+    <!-- wrapper for table and rows -->
 
-        <div class="informationContent">
-
-            <!-- line - information -->
-            <div class="descriptionInformation">
-                <ul>
-                    <li>Full Name</li>
-                    <li>Job Title</li>
-                    <li>Grade</li>
-                    <li>Allocation status</li>
-                    <li>Project</li>
-                    <li>Date of booking</li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-
-
-<!-- line - name  / can repeat-->
-
-<!-- repeat--><!-- repeat--><!-- repeat--><!-- repeat--><!-- repeat--><!-- repeat--><!-- repeat--><!-- repeat-->
-
- <div class="nameInformation">
-    <ul>
-        <li>Ciba Mumu</li>
-        <li>UI Developer</li>
-        <li>Senior Engineer</li>
-        <li>Allocated  </li>
-        <li>Tinity Mirror</li>
-        <li>10/05/2014</li>
-        <a href="#" class="down"><img src="images/down.png"> </a>
-        <a href="#" class="edit"><img src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
+        <div class="informationContent"> 
+          <div class="descriptionInformation">
+            <ul>
+                <li>Full Name</li>
+                <li>Job Title</li>
+                <li>Grade</li>
+                <li>Allocation status</li>
+                <li>Project</li>
+                <li>Date of booking</li>
+            </ul>
+            <div class="clear"></div>
           </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div>
-      <!-- line - button -->
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div>
-<!-- line - details test -->
-<div class="clear"></div>
-
-<hr>
-
-
+          <div id="nameInformation">     
             
-<div class="nameInformation">
-    <ul>
-        <li>Vrinceanu Valentin</li>
-        <li>Java Developer</li>
-        <li>Senior Consultant</li>
-        <li>Not Allocated</li>
-        <li>Visa</li>
-        <li>10/05/2014</li>
-        <a href="#"><img class="down" src="images/down.png"> </a>
-        <a href="#"><img class="edit" src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
           </div>
 
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
+          <div class="clear"></div>
+        </div>
+        <!--close wrap-->
+        <!-- footer -->
+        <footer>
+            <ul class="paginare">
+                <li> <a href="#"> &lt;&lt; </a> </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#"> &gt;&gt; </a> </li>
+            </ul>
+        </footer>
 
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
+    </div>
+</body>
 
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div>
-
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div>
-
-<div class="clear"></div>
-<hr>
-
-
-
-
-        
-<div class="nameInformation">
-    <ul>
-        <li>Bogdan Volosincu</li>
-        <li>.Net Developer</li>
-        <li>Senior Technician</li>
-        <li>Allocated</li>
-        <li>Graduates</li>
-        <li>10/05/2014</li>
-        <a href="#"><img class="down" src="images/down.png"> </a>
-        <a href="#"><img class="edit" src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div>
-
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div>
-
-<div class="clear"></div>
-<hr>
-
-
-
-        
-<div class="nameInformation">
-    <ul>
-        <li>  Carmen Budau</li>
-        <li>Bussines Analyst</li>
-        <li>Engineer</li>
-        <li>Not Allocated</li>
-        <li>Denplan</li>
-        <li>10/05/2014</li>
-        <a href="#"><img class="down" src="images/down.png"> </a>
-        <a href="#"><img class="edit" src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div>
-
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div>
-
-<div class="clear"></div>
-<hr>
-
-
-
-
-
- <div class="nameInformation">
-    <ul>
-        <li>Ciba Mumu</li>
-        <li>UI Developer</li>
-        <li>Senior Engineer</li>
-        <li>Allocated  </li>
-        <li>Tinity Mirror</li>
-        <li>10/05/2014</li>
-        <a href="#" class="down"><img src="images/down.png"> </a>
-        <a href="#" class="edit"><img src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div> 
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div> 
-<div class="clear"></div>
-
-<hr>
-
-
-            
-<div class="nameInformation">
-    <ul>
-        <li>Vrinceanu Valentin</li>
-        <li>Java Developer</li>
-        <li>Senior Consultant</li>
-        <li>Not Allocated</li>
-        <li>Visa</li>
-        <li>10/05/2014</li>
-        <a href="#"><img class="down" src="images/down.png"> </a>
-        <a href="#"><img class="edit" src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div>
-
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div>
-
-<div class="clear"></div>
-<hr>
-
-
-
-
-        
-<div class="nameInformation">
-    <ul>
-        <li>Bogdan Volosincu</li>
-        <li>.Net Developer</li>
-        <li>Senior Technician</li>
-        <li>Allocated</li>
-        <li>Graduates</li>
-        <li>10/05/2014</li>
-        <a href="#"><img class="down" src="images/down.png"> </a>
-        <a href="#"><img class="edit" src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div>
-
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div>
-
-<div class="clear"></div>
-<hr>
-
-
-
-        
-<div class="nameInformation">
-    <ul>
-        <li>  Carmen Budau</li>
-        <li>Bussines Analyst</li>
-        <li>Engineer</li>
-        <li>Not Allocated</li>
-        <li>Denplan</li>
-        <li>10/05/2014</li>
-        <a href="#"><img class="down" src="images/down.png"> </a>
-        <a href="#"><img class="edit" src="images/pencil.png"> </a>
-    </ul>
-    <div class="clear"></div>
-    <div class="moreInfo">
-      <hr>
-      <div class="infoText">
-          <div class="infoTextItem">
-              <div class="leftText">Delivery Unit:</div>
-              <div class="rightText">ISD_Iasi</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Date of start:</div>
-              <div class="rightText">12 / 03 / 2015</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Line manager:</div>
-              <div class="rightText">Bogdan Volonsincu</div>
-              <div class="clear"></div>
-          </div>
-
-          <div class="infoTextItem">
-              <div class="leftText">Project Manager </div>
-              <div class="rightText">Andrei Ursache</div>
-              <div class="clear"></div>
-          </div>
-      </div>
-
-      <div class="infoButton">
-          <form>
-              <button type="submit" class="active"> Active button </button>
-              <button type="submit"> Inactive button </button>
-          </form>
-      </div>
-      <div class="clear"></div>
-  </div>
-</div>
-
-<div class="clear"></div>
-<hr>
-
-          
-<!--stop repeat--><!--stop repeat--><!--stop repeat--><!--stop repeat--><!--stop repeat--><!--stop repeat-->
-
-
-		</div><!--close wrap-->
-<!-- footer -->
-		<footer>
-			<ul class="paginare">
-				<li> <a href="#"> &lt;&lt; </a> </li>
-				<li class="active"><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-      	<li><a href="#">...</a></li>
-				<li><a href="#"> &gt;&gt; </a> </li>
-			</ul>
-		</footer>
-
-</div> 
-	</body>
 </html>
-

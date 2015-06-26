@@ -14,6 +14,7 @@ header {
     font-size: 16px;
     text-decoration: none;
     height: 70px;
+    line-height: 75px;
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -26,7 +27,7 @@ header {
 }
 
 .centerHeader{  
-    width: 50%;
+    width: 330px;;
     margin: 0 auto;
     text-align: center;
     font-size: 30px;
@@ -35,13 +36,21 @@ header {
     line-height: 100%;
 }
 
+.centerHeader img {
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.centerHeader img, .centerHeader p {
+    float: left;
+}
+
 .rightHeader{
     float:right;
     position: absolute;
     right: 0px; 
     top: 0px;
     padding-right: 20px;
-      line-height: 135px;
 }
 
 .rightHeader .info, .rightHeader .avatar {
@@ -107,6 +116,7 @@ header {
     border:1px solid #bdbdbd;
     padding: 0 8px;
     margin: 10px 16px 0px 16px;
+    background-color: #fff;
 
 }
 
@@ -121,7 +131,8 @@ header {
     font-family: Lato;
     border:1px solid #bdbdbd;
     box-sizing: border-box;
-    padding: 0 10px; 
+    padding: 0 10px;     
+    background-color: #fff;
 }
 
 
@@ -182,6 +193,7 @@ header {
     margin-left: 10px;
     border: 1px solid #bdbdbd;
     padding: 0 8px;
+    background-color: #fff;
 }
 .container .filterContainer form .enteries select {
     border-right-style: none;
@@ -195,6 +207,7 @@ header {
     border: 1px solid #bdbdbd;
     padding: 0 8px;
     float: right;
+    background-color: #fff;
 }
 hr {
     color: #DB532D;
@@ -228,7 +241,7 @@ hr {
     color: #919191;
     font-size: 16px;
 }
-.informationContent .nameInformation {
+.informationContent #nameInformation {
     box-sizing: border-box;
     width: 960px;
     margin: 0 auto;
@@ -243,25 +256,25 @@ hr {
 .informationContent ul.descriptionInformation li.open ul.infoText {
     display: block;
 }
-.nameInformation ul {
+#nameInformation ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
-.nameInformation ul li {
+#nameInformation ul li {
     text-align: left;
     padding: 5px;
     float: left;
     width: 14%;
-    height: 20px;
     color: #6B6B6B;
     font-size: 14px;
     padding-top: 5px;
 }
-.nameInformation ul li.action {
+#nameInformation ul li.action {
   width: auto;
 }
-.nameInformation img {
+#nameInformation img {
     padding-left: 0px;
     padding-right: 15px;
     line-height: 40px;
@@ -269,7 +282,7 @@ hr {
     float: right;
 }
 .moreInfo {
-  display: none;
+    display: none;
 }
 .infoText {
     float: left;
@@ -372,33 +385,28 @@ footer .paginare li.active a {
 
 /*------------------------------------------------------responsive-----------------------------------*/
 
-@media only screen and (min-width: 1px) and (max-width: 360px){
+@media only screen and (min-width: 1px) and (max-width: 640px){
 
     header {
         display: inline-block;
-        float: left;
-        margin-top: 25px;
-        height: 50px;
+        float: left; 
     }
     
     .rightHeader{
-        float: right;
-        position: absolute;
-        right: 0px;
-        top: 15px;
-        padding-right: 20px;
-        line-height: 0px; 
+        top:2px;
+    }
+    .centerHeader {
+        width: 160px;
     }
     .centerHeader p{
         width: auto;
-        font-size: 10px;
-        margin-top: 25px;
-        margin-bottom: 0px;
-        margin-top: 0px;
+        font-size: 13px;
+        margin-top: 18px;
 
     }
     .centerHeader img{
         width:22px;
+        margin-top: 23px
     }
 
     .rightHeader .info, .rightHeader .avatar {
@@ -441,6 +449,8 @@ footer .paginare li.active a {
         margin: 0;        
     }
 
+       
+
     
     .informationContent{
         width: 100%;
@@ -450,35 +460,35 @@ footer .paginare li.active a {
         display: none;
     }
 
-    .informationContent .nameInformation {
+    .informationContent #nameInformation {
         width: 100%;
     }
 
-    .nameInformation ul li {
+    #nameInformation ul li {
         width: 100%;
     }
 
-    .nameInformation ul li:before {
+    #nameInformation ul li:before {
         display: inline-block;
         width: 150px;    
     }
 
-    .nameInformation ul li:nth-of-type(1):before {
+    #nameInformation ul li:nth-of-type(1):before {
         content: "Full Name:";
     }
-    .nameInformation ul li:nth-of-type(2):before {
+    #nameInformation ul li:nth-of-type(2):before {
         content: "Job Title:";
     }
-    .nameInformation ul li:nth-of-type(3):before {
+    #nameInformation ul li:nth-of-type(3):before {
         content: "Grade:";
     }
-    .nameInformation ul li:nth-of-type(4):before {
+    #nameInformation ul li:nth-of-type(4):before {
         content: "Allocation status:";
     }
-    .nameInformation ul li:nth-of-type(5):before {
+    #nameInformation ul li:nth-of-type(5):before {
         content: "Project:";
     }
-    .nameInformation ul li:nth-of-type(6):before {
+    #nameInformation ul li:nth-of-type(6):before {
         content: "Date of booking:";
     }
 
@@ -531,4 +541,16 @@ footer .paginare li.active a {
         text-decoration: none;
         color: #6B6B6B;
     }
+
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Lato;
+}
+
+.clear {
+    clear: both;
+}
+
