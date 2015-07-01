@@ -30,7 +30,7 @@ header {
     width: 330px;;
     margin: 0 auto;
     text-align: center;
-    font-size: 30px;
+    font-size: 27px;
     font-family: Lato;
     color: #DB532D;
     line-height: 100%;
@@ -56,7 +56,9 @@ header {
 .rightHeader .info, .rightHeader .avatar {
     float: left;
     width: 65px;
+    margin-top: 20px;
 }
+
 
 /*-----------------------------------------------------HEADER CLOSE----------------------------------*/
 
@@ -256,13 +258,13 @@ hr {
 .informationContent ul.descriptionInformation li.open ul.infoText {
     display: block;
 }
-#nameInformation ul {
+.nameInformation ul {
     list-style: none;
     padding: 0;
     margin: 0;
     overflow: hidden;
 }
-#nameInformation ul li {
+.nameInformation ul li {
     text-align: left;
     padding: 5px;
     float: left;
@@ -271,10 +273,10 @@ hr {
     font-size: 14px;
     padding-top: 5px;
 }
-#nameInformation ul li.action {
-  width: auto;
+.nameInformation ul li.action {
+     width: auto;
 }
-#nameInformation img {
+.nameInformation img {
     padding-left: 0px;
     padding-right: 15px;
     line-height: 40px;
@@ -358,7 +360,9 @@ footer .paginare li {
     border-width: 1px 1px 1px 0;
     padding: 10px 16px 10px 16px;
 }
-
+footer ul{
+    padding: 0px;
+}
 footer .paginare li:first-child {
     border-left-width: 1px;
     border-radius: 4px 0 0 4px;
@@ -401,24 +405,28 @@ footer .paginare li.active a {
     .centerHeader p{
         width: auto;
         font-size: 13px;
-        margin-top: 18px;
+        margin-top: 20px;
 
     }
     .centerHeader img{
         width:22px;
-        margin-top: 23px
+        margin-top: 23px;
     }
 
-    .rightHeader .info, .rightHeader .avatar {
+     .rightHeader .avatar {
         width: 0px;
         padding-right: 25px;
+        margin-top: 5px;
     }
 
-    .rightHeader .info, .rightHeader .info {
+    .rightHeader .info{
         width: 0px;
-        padding-right: 35px;
+        padding-right: 40px;
+        margin-top: 5px;
+
     }
      
+        
 
     .rightHeader img{
         width:35px;
@@ -449,7 +457,20 @@ footer .paginare li.active a {
         margin: 0;        
     }
 
-       
+    .content .buttonsContent form select {
+    border-right-style: none;
+    border-bottom-style: none;
+    height: 40px;
+    width: 220px;
+    border-radius: 4px; 
+    font-family: Lato;
+    box-shadow:none;
+    border:1px solid #bdbdbd;
+    padding: 0 8px;
+    margin: 10px 0px 0px 0px;
+    background-color: #fff;
+
+}
 
     
     .informationContent{
@@ -519,6 +540,10 @@ footer .paginare li.active a {
         height: 23px;
         font-family: Lato;
         font-size: 0;
+    }
+
+    footer ul{
+    padding: 0px;
     }
 
     footer .paginare li {

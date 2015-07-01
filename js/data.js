@@ -92,7 +92,7 @@ var data = [{
     dateOfStart: "12 / 03 / 2015",
     lineManager: "Bogdan Volosincu",
     projectManager: "Andrei Ursache",
-    jobTitle: "Bussines Bussines Analyst Analyst Analyst",
+    jobTitle: "Bussines Bussines",
     grade: "Engineer",
     allocationStatus: "Not Allocated",
     project: "Denplan",
