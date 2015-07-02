@@ -184,7 +184,7 @@ header {
 .filterContainer .entries {
     float: left;
 }
-.container .filterContainer form .filter select {
+.container .filterContainer form .filter input {
     border-right-style: none;
     border-bottom-style: none;
     height: 40px;
@@ -196,6 +196,8 @@ header {
     border: 1px solid #bdbdbd;
     padding: 0 8px;
     background-color: #fff;
+    cursor: pointer;
+    background-image: url(' images/search2.png') no-repeat left  center;
 }
 .container .filterContainer form .enteries select {
     border-right-style: none;
@@ -224,6 +226,7 @@ hr {
     height: 50px;
     text-align: center;
     margin-top: 10px;
+      margin-bottom: 10px;
     color: #757575;
     background-color: #E3E3E3;
     border-bottom: 1px solid #B5B5B5;
@@ -243,7 +246,7 @@ hr {
     color: #919191;
     font-size: 16px;
 }
-.informationContent #nameInformation {
+.informationContent .nameInformation {
     box-sizing: border-box;
     width: 960px;
     margin: 0 auto;
@@ -252,6 +255,38 @@ hr {
     margin-top: 10px;
     color: #757575;
 }
+
+.nameInformation li input {
+    max-width: 100%;
+    border:none;
+    padding: 0px;
+
+}
+
+.nameInformation li input:hover{
+    border-bottom: 1px solid red;
+    cursor-color:red;
+
+}
+
+.nameInformation li input:focus{
+    border-bottom: 1px solid red;
+    outline-color: transparent; /*transparent chenarul cu albastru*/
+    color: red;
+    cursor-color:red;
+}
+
+.nameInformation  input {
+    max-width:14%;
+    border:none;
+    text-align: left;
+    padding: 5px;
+    float: left;
+    color: #6B6B6B;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
 .informationContent ul li.open {
     background: url('images/down.png') no-repeat left 5px;
 }
@@ -451,7 +486,7 @@ footer .paginare li.active a {
         margin-top: 10px;
     }
 
-    .container .filterContainer form .filter select, .container .filterContainer form .enteries select {
+    .container .filterContainer form .filter input, .container .filterContainer form .enteries select {
         width: 100%;
         float: none;
         margin: 0;        
@@ -485,34 +520,35 @@ footer .paginare li.active a {
         width: 100%;
     }
 
-    #nameInformation ul li {
+    .nameInformation ul li {
         width: 100%;
     }
 
-    #nameInformation ul li:before {
+    .nameInformation ul li:before {
         display: inline-block;
         width: 150px;    
     }
 
-    #nameInformation ul li:nth-of-type(1):before {
+    .nameInformation ul li:nth-of-type(1):before {
         content: "Full Name:";
     }
-    #nameInformation ul li:nth-of-type(2):before {
+    .nameInformation ul li:nth-of-type(2):before {
         content: "Job Title:";
     }
-    #nameInformation ul li:nth-of-type(3):before {
+    .nameInformation ul li:nth-of-type(3):before {
         content: "Grade:";
     }
-    #nameInformation ul li:nth-of-type(4):before {
+    .nameInformation ul li:nth-of-type(4):before {
         content: "Allocation status:";
     }
-    #nameInformation ul li:nth-of-type(5):before {
+    .nameInformation ul li:nth-of-type(5):before {
         content: "Project:";
     }
-    #nameInformation ul li:nth-of-type(6):before {
+    .nameInformation ul li:nth-of-type(6):before {
         content: "Date of booking:";
     }
 
+  
     .moreInfo {
         display: block;
     }

@@ -17,120 +17,13 @@ and open the template in the editor.
 </head>
 
 <!--script-->
-<script type="text/javascript">
-    
-    var functions = (function() {
-
-        return {
-            tableConstruct: function() {
-                //get all elements that have "informationContentElements" class
-                var informationContentElements = document.getElementsByClassName("informationContent");
-                //table holder is the first element with the "informationContentElements" class in our document 
-                var table = informationContentElements[0];
-                //start interating the array and populate the table
-                var rows = '<div class="descriptionInformation">\
-                        <ul>\
-                            <li>Full Name</li>\
-                            <li>Job Title</li>\
-                            <li>Grade</li>\
-                            <li>Allocation status</li>\
-                            <li>Project</li>\
-                            <li>Date of booking</li>\
-                        </ul>\
-                        <div class="clear"></div>\
-                    </div>\
-                ';
-                for(var i = 0; i < data.length; i++) {
-                    rows += '<div class="nameInformation">\
-                        <ul>\
-                            <li>' + data[i]["fullName"] + '</li>\
-                            <li>' + data[i]["jobTitle"] + '</li>\
-                            <li>' + data[i]["grade"] + '</li>\
-                            <li>' + data[i]["allocationStatus"] + '</li>\
-                            <li>' + data[i]["project"] + '</li>\
-                            <li>' + data[i]["date"] + '</li>\
-                            <img src="images/down.png" class="down">\
-                            <img src="images/pencil.png" class="edit">\
-                        </ul>\
-                        <div class="clear"></div>\
-                        <div class="moreInfo">\
-                            <hr>\
-                            <div class="infoText">\
-                                <div class="infoTextItem">\
-                                    <div class="leftText">Delivery Unit:</div>\
-                                    <div class="rightText">' + data[i]["deliveryUnit"] + '</div>\
-                                    <div class="clear"></div>\
-                                </div>\
-        \
-                                <div class="infoTextItem">\
-                                    <div class="leftText">Date of start:</div>\
-                                    <div class="rightText">' + data[i]["dateOfStart"] + '</div>\
-                                    <div class="clear"></div>\
-                                </div>\
-        \
-                                <div class="infoTextItem">\
-                                    <div class="leftText">Line manager:</div>\
-                                    <div class="rightText">' + data[i]["lineManager"] + '</div>\
-                                    <div class="clear"></div>\
-                                </div>\
-        \
-                                <div class="infoTextItem">\
-                                    <div class="leftText">Project Manager </div>\
-                                    <div class="rightText">' + data[i]["projectManager"] + '</div>\
-                                    <div class="clear"></div>\
-                                </div>\
-                            </div>\
-        \
-                            <div class="infoButton">\
-                                <form>\
-                                    <button type="submit" class="active"> Active button </button>\
-                                    <button type="submit"> Inactive button </button>\
-                                </form>\
-                            </div>\
-                            <div class="clear"></div>\
-                        </div>\
-                    </div>\
-        \
-                    <div class="clear"></div>\
-        \
-                    <hr>';
-                }
-                
-                table.innerHTML = rows;
-                
-                var elemListEdit = document.querySelectorAll('.down, .edit');
-                
-                for (var i = 0; i < elemListEdit.length; i++) {                     
-                    elemListEdit[i].onclick = function(e) {
-                        var moreInfoElement = e.target.parentNode.parentNode.children[2];
-                        if(moreInfoElement.offsetParent != null) {
-                            moreInfoElement.style.display = 'none';
-                        } else {
-                            moreInfoElement.style.display = 'block';
-                        }
-                    }
-                }
-
-            }
-        };
-    })();
-
-    var coolNamespace = {
-        functions: functions
-    };
-
-    //start function
-    var init = function() {
-        var functii = coolNamespace.functions;
-        functii.tableConstruct();
-    }
-    //stop function
-</script>
+ 
 <!--stop script-->
 
 <!--header-->
 
-<body onload="init()">
+<body>
+
     <header>
 
         <div class="leftHeader">
@@ -184,7 +77,8 @@ and open the template in the editor.
 
 
         <div class="menuContent">
-            <p>Advanced filters</p>
+            <p> <img src="images/filter.png"> Show advanced filters</p>
+            <div class="clear"></div>
         </div>
 
     </div>
@@ -202,15 +96,8 @@ and open the template in the editor.
                 <form>
 
                     <div class="filter">
-                        <select>
-                            <option disabled selected>Filter by Blah blah</option>
-                            <option>Job 1</option>
-                            <option>Job 2</option>
-                            <option>Job 3</option>
-                            <option>Job 4</option>
-                            <option>Job 5</option>
-                            <option>Job 6</option>
-                        </select>
+                        <input type="search" name="Search" value="Do a search"  > 
+                        
                     </div>
 
                     <div class="enteries">
@@ -235,6 +122,44 @@ and open the template in the editor.
         <div class="informationContent">
         </div>
         <!--close wrap-->
+        <div>
+            <br>
+        </div>
+        <div class="container">
+            <div class="dataContainer">
+                Better Employees
+            </div>
+            <!-- container form -->
+            <div class="filterContainer">
+                <form>
+
+                    <div class="filter">
+                        <input type="search" name="Search" value="Do a search"  > 
+                        
+                    </div>
+
+                    <div class="enteries">
+                        <select>
+                            <option disabled selected>Show: </option>
+                            <option>10 enteries</option>
+                            <option>20 enteries</option>
+                            <option>30 enteries</option>
+                            <option>40 enteries</option>
+                            <option>50 enteries</option>
+                            <option>60 enteries</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <!-- wrapper for table and rows -->
+        <div class="informationContent editable-table">
+        </div>
+        <!--close wrap-->
+
         <!-- footer -->
         <footer>
             <ul class="paginare">
@@ -248,6 +173,7 @@ and open the template in the editor.
         </footer>
 
     </div>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>

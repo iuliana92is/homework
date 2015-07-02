@@ -32,7 +32,7 @@ var data = [{
     project: "Graduate",
     date: "10/05/2014"
 }, {
-    fullName: "CarmenBudau",
+    fullName: "Carmen Budau",
     deliveryUnit: "ISD_Iasi",
     dateOfStart: "12 / 03 / 2015",
     lineManager: "Bogdan Volosincu",
@@ -65,7 +65,7 @@ var data = [{
     project: "Visa",
     date: "10/05/2014"
 }, {
-    fullName: " Ionut Popescu",
+    fullName: "Ionut Popescu",
     deliveryUnit: "ISD_Iasi",
     dateOfStart: "12 / 03 / 2015",
     lineManager: "Bogdan Volosincu",
