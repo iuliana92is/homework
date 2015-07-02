@@ -80,6 +80,10 @@ var functions = (function() {
                         }
                     }
                 }//for
+
+           
+
+
         }//tableConstruct: function()
 
         function makeEditableTable (elementSelector) {

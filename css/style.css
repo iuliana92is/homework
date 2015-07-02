@@ -264,16 +264,15 @@ hr {
 }
 
 .nameInformation li input:hover{
-    border-bottom: 1px solid red;
-    cursor-color:red;
+    border-bottom: 1px solid #D9532D;
+    cursor-color:#D9532D;
 
 }
 
 .nameInformation li input:focus{
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #D9532D;
     outline-color: transparent; /*transparent chenarul cu albastru*/
-    color: red;
-    cursor-color:red;
+    color: #D9532D; 
 }
 
 .nameInformation  input {
@@ -285,6 +284,8 @@ hr {
     color: #6B6B6B;
     font-size: 14px;
     padding-top: 5px;
+    font-family: Lato;
+
 }
 
 .informationContent ul li.open {
@@ -330,14 +331,12 @@ hr {
 }
 .infoText .leftText {
     padding-top: 10px;
-    width: 140px;
+    width: 150px;
     margin-left: 10px;
     float: left;
 }
 .infoText .rightText {
     padding-top: 10px;
-    width: 250px;
-    float: left;
     color: #6B6B6B;
 }
 .infoButton {
@@ -482,14 +481,16 @@ footer .paginare li.active a {
     }
     .filterContainer .filter, .filterContainer .enteries {
         float: none;
-        width: 100%;
+        width: 330px;
         margin-top: 10px;
+        margin: 0 auto;
     }
 
     .container .filterContainer form .filter input, .container .filterContainer form .enteries select {
         width: 100%;
         float: none;
-        margin: 0;        
+        margin: 0;  
+        margin-top: 10px;      
     }
 
     .content .buttonsContent form select {
@@ -516,7 +517,7 @@ footer .paginare li.active a {
         display: none;
     }
 
-    .informationContent #nameInformation {
+    .informationContent .nameInformation {
         width: 100%;
     }
 
@@ -527,10 +528,12 @@ footer .paginare li.active a {
     .nameInformation ul li:before {
         display: inline-block;
         width: 150px;    
+        padding-left: 5px;
     }
 
     .nameInformation ul li:nth-of-type(1):before {
         content: "Full Name:";
+
     }
     .nameInformation ul li:nth-of-type(2):before {
         content: "Job Title:";
@@ -552,6 +555,7 @@ footer .paginare li.active a {
     .moreInfo {
         display: block;
     }
+
 
     .infoText, .infoButton {
         width: 100%;
