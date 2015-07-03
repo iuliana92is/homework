@@ -1,4 +1,6 @@
-var data = [{
+var iuliana = iuliana || {};
+
+iuliana.data = [{
     fullName: "Ciba Mumu",
     deliveryUnit: "ISD_Iasi",
     dateOfStart: "12 / 03 / 2015",
@@ -49,7 +51,7 @@ var data = [{
     lineManager: "Bogdan Volosincu",
     projectManager: "Andrei Ursache",
     jobTitle: "UI Developer",
-    grade: "seniorEngineer",
+    grade: "SeniorEngineer",
     allocationStatus: "Allocated",
     project: "Trinity Miror",
     date: "10/05/2014"

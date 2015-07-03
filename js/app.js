@@ -1,11 +1,13 @@
+var iuliana = iuliana || {};
 
-var functions = (function() {
+iuliana.tableGenerator= (function() {
 
         function tableConstruct () {
 
                 var informationContentElements = document.getElementsByClassName("informationContent"); 
                 var table = informationContentElements[0];
                 var tableEditable = informationContentElements[1]; 
+                var data = iuliana.data;
                 var rows = '<div class="descriptionInformation">\
                         <ul>\
                             <li>Full Name</li>\
@@ -66,8 +68,8 @@ var functions = (function() {
                     <hr>';
                 } //for
                 
-                table.innerHTML = rows;
-                tableEditable.innerHTML = rows;
+                table.innerHTML = rows;//first table
+                tableEditable.innerHTML = rows; //second table
                 var elemListEdit = document.querySelectorAll('.down, .edit');
                 
                 for (var i = 0; i < elemListEdit.length; i++) {                     
@@ -80,9 +82,6 @@ var functions = (function() {
                         }
                     }
                 }//for
-
-           
-
 
         }//tableConstruct: function()
 
@@ -102,13 +101,14 @@ var functions = (function() {
             }
         }
 
+
         return {
-            tableConstruct: tableConstruct,
-            makeEditableTable : makeEditableTable
+            tableConstruct: tableConstruct, //fisrt table
+            makeEditableTable : makeEditableTable //second table
         };//return
 
     }());
-console.log(functions);
+// console.log(functions);
 //var test = new functions();
-functions.tableConstruct();
-functions.makeEditableTable('.editable-table');
+iuliana.tableGenerator.tableConstruct();
+iuliana.tableGenerator.makeEditableTable('.editableTable');
