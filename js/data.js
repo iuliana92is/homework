@@ -1,6 +1,4 @@
-var iuliana = iuliana || {};
-
-iuliana.data = [{
+var data = [{
     fullName: "Ciba Mumu",
     deliveryUnit: "ISD_Iasi",
     dateOfStart: "12 / 03 / 2015",
@@ -89,7 +87,7 @@ iuliana.data = [{
     project: "Denplan",
     date: "10/05/2014"
 }, {
-	fullName: "Marius Ionescu",
+    fullName: "Marius Ionescu",
     deliveryUnit: "ISD_Iasi",
     dateOfStart: "12 / 03 / 2015",
     lineManager: "Bogdan Volosincu",

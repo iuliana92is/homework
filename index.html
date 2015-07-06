@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -76,7 +77,8 @@ and open the template in the editor.
                 </select>
 
 
-                <button type="search"><img src="images/search.png"> search </button>
+                <button type="text"> search </button>
+                <img src="images/search.png">
             </form>
         </div>
 
@@ -98,10 +100,10 @@ and open the template in the editor.
             </div>
             <!-- container form -->
             <div class="filterContainer">
-                <form>
+                <form onsubmit='return formValidation()'>
 
                     <div class="filter">
-                        <input type="text" name="search"  id="search" value="Do a search"  > 
+                        <input type="text" name="search"   value="Do a search"> 
                         
                     </div>
 
@@ -126,7 +128,6 @@ and open the template in the editor.
         <!-- wrapper for table and rows -->
         <!-- first table -->
         <div class="informationContent">
-
         </div>
         <!--close wrap-->
         <div>
@@ -138,10 +139,10 @@ and open the template in the editor.
             </div>
             <!-- container form -->
             <div class="filterContainer">
-                <form>
+                <form form name="form1" method="" action="">
 
                     <div class="filter">
-                        <input type="search" name="Search" value="Do a search"  > 
+                        <input type="text" name="Search" value="Do a search"  > 
                         
                     </div>
 
@@ -186,40 +187,7 @@ and open the template in the editor.
 
 
     <script type="text/javascript" src="js/app.js"></script>
-     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-    
-
-    <script type="text/javascript">
-      $(document).ready(function()
-      {
-        $('#search').keyup(function()
-        {
-          searchTable($(this).val());
-        });
-      });
-      function searchTable(inputVal)
-      {
-        var table = $('#nameInformation');
-        table.find('ul').each(function(index, row)
-        {
-          var allCells = $(row).find('li');
-          if(allCells.length > 0)
-          {
-            var found = false;
-            allCells.each(function(index, td)
-            {
-              var regExp = new RegExp(inputVal, 'i');
-              if(regExp.test($(td).text()))
-              {
-                found = true;
-                return false;
-              }
-            });
-            if(found == true)$(rows).show();else $(row).hide();
-          }
-        });
-      }
-    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 </body>
 
 </html>
