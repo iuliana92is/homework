@@ -71,69 +71,7 @@ iuliana.tableGenerator= (function() {
 							.append($('<div></div>').addClass('clear'))
 					);
                 } //for
-
-        //         var rows = '<div class="descriptionInformation">\
-        //                 <ul>\
-        //                     <li>Full Name</li>\
-        //                     <li>Job Title</li>\
-        //                     <li>Grade</li>\
-        //                     <li>Allocation status</li>\
-        //                     <li>Project</li>\
-        //                     <li>Date of booking</li>\
-        //                 </ul>\
-        //                 <div class="clear"></div>\
-        //             </div>\
-        //         ';
-        //         for(var i = 0; i < data.length; i++) {
-        //             rows += '<div class="nameInformation">\
-        //                 <ul>\
-        //                     <li>' + data[i]["fullName"] + '</li>\
-        //                     <li>' + data[i]["jobTitle"] + '</li>\
-        //                     <li>' + data[i]["grade"] + '</li>\
-        //                     <li>' + data[i]["allocationStatus"] + '</li>\
-        //                     <li>' + data[i]["project"] + '</li>\
-        //                     <li>' + data[i]["date"] + '</li>\
-        //                     <img src="images/down.png" class="down">\
-        //                     <img src="images/pencil.png" class="edit">\
-        //                 </ul>\
-        //                 <div class="clear"></div>\
-        //                 <div class="moreInfo">\
-        //                     <hr>\
-        //                     <div class="infoText">\
-        //                         <div class="infoTextItem">\
-        //                             <div class="leftText">Delivery Unit:</div>\
-        //                             <div class="rightText">' + data[i]["deliveryUnit"] + '</div>\
-        //                             <div class="clear"></div>\
-        //                             <div class="leftText">Date of start:</div>\
-        //                             <div class="rightText">' + data[i]["dateOfStart"] + '</div>\
-        //                             <div class="clear"></div>\
-        //                             <div class="leftText">Line manager:</div>\
-        //                             <div class="rightText">' + data[i]["lineManager"] + '</div>\
-        //                             <div class="clear"></div>\
-        //                             <div class="leftText">Project Manager </div>\
-        //                             <div class="rightText">' + data[i]["projectManager"] + '</div>\
-        //                             <div class="clear"></div>\
-        //                         </div>\
-        // \
-        //                     </div>\
-        // \
-        //                     <div class="infoButton">\
-        //                         <form>\
-        //                             <button type="submit" class="active"> Active button </button>\
-        //                             <button type="submit"> Inactive button </button>\
-        //                         </form>\
-        //                     </div>\
-        //                     <div class="clear"></div>\
-        //                 </div>\
-        //             </div>\
-        // \
-        //             <div class="clear"></div>\
-        // \
-        //             <hr>';
-        //         } //for
-
-
-                //table drop details content
+                
                 tableEditable.html(table.html());
                 var elemListEdit = document.querySelectorAll('.down, .edit');
                 
@@ -150,8 +88,6 @@ iuliana.tableGenerator= (function() {
 
         }//tableConstruct: function()
 
-
-        //tabel 2 with input text
         function makeEditableTable (elementSelector) {
             var rows = document.querySelectorAll(elementSelector + ' .nameInformation ul' );
             var childrenLi = [];
@@ -164,8 +100,10 @@ iuliana.tableGenerator= (function() {
 					childrenLi[i][j].onclick = function(e) {
 						var oldValue = e.target.textContent;
 						e.target.innerHTML = "<input type = 'text' value = '"+oldValue+"'>";
+						var childNodes = e.target.childNodes;
+						childNodes[0].focus();
 						
-						e.target.onfocus = function(e2) {
+						e.target.onblur = function(e2) {
 							e.target.parentNode.innerHTML = e2.target.value;
 						}
 					}
@@ -174,24 +112,48 @@ iuliana.tableGenerator= (function() {
         }
 
 		function tableFilter(table) {
-			$('.filter input').keyup( function () {			
-				var filter = $(this).val();
-				if(filter) {
-				  $(table).find(".nameInformation li:not(:contains(" + filter + "))").parent().parent().hide();
-				  $(table).find(".nameInformation li:contains(" + filter + ")").parent().parent().show();
-				  // $(table).find(".nameInformation li:first-child:not(:contains(" + filter + "))").parent().parent().slideUp();
-				  // $(table).find(".nameInformation li:first-child:contains(" + filter + ")").parent().parent().slideDown();
-				} else {
-				  $(table).find(".nameInformation").show();
+			$('.filter input').keypress( function (e) {
+				//if enter pressed
+				if(e.which == 13) {	
+					//The preventDefault() method does not prevent further propagation of an event through the DOM. Use the stopPropagation() method to handle this.
+					// e.preventDefault();
+					// var filter = $(this).val().split(':');
+					// if(filter.length != 2) {
+					// 	alert('Invalid input!  Input: Full Name, Job Title, Grade, Allocation status, Project, Date of booking');
+					// 	return false;
+					// }
+					
+					//find column based on first part of string
+					var i = 0;
+					$('.descriptionInformation li').each(function(index) {
+						if($(this).html().toLowerCase() == filter[0].toLowerCase()) {
+							//we found the column and we can exit. "i" will keep the column number
+							i = index + 1;
+							return false;
+						}
+					});
+					
+					if(i == 0) {
+						alert('Column not found!');
+						return false;
+					}
+					
+					if(filter[1].length && i) {
+						$(table).find('.nameInformation li:nth-of-type(' + i + ')').each(function() {
+							if($(this).html().toLowerCase().indexOf(filter[1].toLowerCase()) >= 0) {
+								console.log($(this).parent().parent());
+								$(this).parent().parent().slideDown();
+							} else {
+								$(this).parent().parent().slideUp();
+							}
+						});
+					} else {
+					  $(table).find(".nameInformation").slideDown();
+					}
+					return false;
 				}
-				return false;
 			  });
 		  }
-
-
-
-
-		
 
         return {
             tableConstruct: tableConstruct,
@@ -205,4 +167,3 @@ iuliana.data = data;
 iuliana.tableGenerator.tableConstruct();
 iuliana.tableGenerator.makeEditableTable('.editableTable');
 iuliana.tableGenerator.tableFilter('.informationContent');
-// iuliana.tableGenerator.tableFilter('.nameInformation');
