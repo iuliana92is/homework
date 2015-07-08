@@ -319,7 +319,6 @@ hr {
     padding-right: 15px;
     line-height: 40px;
     display: inline;
-    float: right;
 }
 .moreInfo {
     display: none;
@@ -370,6 +369,31 @@ hr {
     border-color: #DB532D;
     color: #DB532D;
 }
+
+.buttonsBar form{
+    margin: 0 auto;
+    text-align: center;
+}
+.newEmployee, .saveData {
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-top-style: none;
+    height: 40px;
+    width: 220px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px; 
+    color: white;
+    background: #DB532D;
+    font-size: 15px;
+    font-family: Lato;
+    margin-top: 10px;
+}
+
+
+
 /*-----------------------------------------------------WRAP CLOSE----------------------------------*/
 
 /*-----------------------------------------------------FOOTER----------------------------------*/
