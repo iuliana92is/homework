@@ -377,21 +377,18 @@ hr {
 .newEmployee, .saveData {
     border-right-style: none;
     border-bottom-style: none;
-    border-left-style: none;
-    border-top-style: none;
     height: 40px;
-    width: 220px;
-    text-transform: uppercase;
+    width: 160px;
     text-decoration: none;
     text-align: center;
-    border-radius: 4px; 
-    color: white;
-    background: #DB532D;
-    font-size: 15px;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    color: #919191;
+    font-size: 14px;
     font-family: Lato;
+    background-color: white;
     margin-top: 10px;
 }
-
 
 
 /*-----------------------------------------------------WRAP CLOSE----------------------------------*/

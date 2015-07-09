@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -14,11 +13,11 @@ and open the template in the editor.
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <!--script-->
- 
+
 <!--stop script-->
 
 <!--header-->
@@ -26,7 +25,6 @@ and open the template in the editor.
 <body>
 
     <header>
-
         <div class="leftHeader">
             <img src="images/menuicon.png">
         </div>
@@ -87,82 +85,94 @@ and open the template in the editor.
 
     <!--wrap-->
     <div class="wrap">
-        <!-- container employees -->
-        <div class="container">
-            <div class="dataContainer">
-                Employees
+        <div class="wrapper1">
+            <!-- container employees -->
+            <div class="container">
+                <div class="dataContainer">
+                    Employees
+                </div>
+                <!-- container form -->
+                <div class="filterContainer">
+                    <form>
+
+                        <div class="filter">
+                            <input type="search" name="search" id="search" placeholder="Do a search">
+
+                        </div>
+
+                        <div class="enteries">
+                            <select>
+                                <option disabled selected>Show: </option>
+                                <option>10 enteries</option>
+                                <option>20 enteries</option>
+                                <option>30 enteries</option>
+                                <option>40 enteries</option>
+                                <option>50 enteries</option>
+                                <option>60 enteries</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-            <!-- container form -->
-            <div class="filterContainer">
-                <form>
 
-                    <div class="filter">
-                        <input type="search" name="search"  id="search" placeholder="Do a search"  > 
-                        
-                    </div>
+            <div class="clear"></div>
 
-                    <div class="enteries">
-                        <select>
-                            <option disabled selected>Show: </option>
-                            <option>10 enteries</option>
-                            <option>20 enteries</option>
-                            <option>30 enteries</option>
-                            <option>40 enteries</option>
-                            <option>50 enteries</option>
-                            <option>60 enteries</option>
-                        </select>
-                    </div>
 
-                </form>
+            <!-- wrapper for table and rows -->
+            <!-- first table -->
+            <div class="informationContent firstTable">
             </div>
-        
+            <!--close wrap-->
+            <div>
 
-        <div class="clear"></div>
 
-        <!-- wrapper for table and rows -->
-        <!-- first table -->
-        <div class="informationContent">
-        </div>
-        </div>
-        <!--close wrap-->
-        <div>
+            </div>
             <br>
-        </div>
-        <div class="container">
-            <div class="dataContainer">
-                Better Employees
-            </div>
-            <!-- container form -->
-            <div class="filterContainer">
-                <form>
 
-                    <div class="filter">
-                        <input type="search" name="Search" placeholder="Do a search"  > 
-                        
-                    </div>
-
-                    <div class="enteries">
-                        <select>
-                            <option disabled selected>Show: </option>
-                            <option>10 enteries</option>
-                            <option>20 enteries</option>
-                            <option>30 enteries</option>
-                            <option>40 enteries</option>
-                            <option>50 enteries</option>
-                            <option>60 enteries</option>
-                        </select>
-                    </div>
-
-                </form>
-            </div>
         </div>
 
+        <div class="wrapper2">
+            <div class="container">
+                <div class="dataContainer">
+                    Better Employees
+                </div>
+                <!-- container form -->
+                <div class="filterContainer">
+                    <form>
+
+                        <div class="filter">
+                            <input type="search" name="Search" placeholder="Do a search">
+
+                        </div>
+
+                        <div class="enteries">
+                            <select>
+                                <option disabled selected>Show: </option>
+                                <option>10 enteries</option>
+                                <option>20 enteries</option>
+                                <option>30 enteries</option>
+                                <option>40 enteries</option>
+                                <option>50 enteries</option>
+                                <option>60 enteries</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
 
 
-        <div class="clear"></div>
-                 <!-- wrapper for table and rows -->
-        <!-- second table -->
-        <div class="informationContent editableTable">
+
+            <div class="clear"></div>
+            <!-- wrapper for table and rows -->
+            <!-- second table -->
+            <div class="informationContent editableTable">
+            </div>
+<!-- 
+            <button type="button" class="saveData"><img src="images/save.png"> save </button>
+            <button type="button" class="newEmployee"><img src="images/add.png"> new employee </button> -->
+        
         </div>
         <!--close wrap-->
 
@@ -170,10 +180,14 @@ and open the template in the editor.
         <footer>
             <ul class="paginare">
                 <li> <a href="#"> &lt;&lt; </a> </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">...</a></li>
+                <li class="active"><a href="#">1</a>
+                </li>
+                <li><a href="#">2</a>
+                </li>
+                <li><a href="#">3</a>
+                </li>
+                <li><a href="#">...</a>
+                </li>
                 <li><a href="#"> &gt;&gt; </a> </li>
             </ul>
         </footer>
