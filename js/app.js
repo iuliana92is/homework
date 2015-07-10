@@ -6,12 +6,12 @@ iuliana.tableGenerator = (function() {
         element.append(
             $('<div></div>').addClass('nameInformation')
             .append($('<ul></ul>')
-                .append($('<li></li>').addClass('fullName').text(data["fullName"]))
-                .append($('<li></li>').addClass('jobTitle').text(data["jobTitle"]))
-                .append($('<li></li>').addClass('grade').text(data["grade"]))
-                .append($('<li></li>').addClass('allocationStatus').text(data["allocationStatus"]))
-                .append($('<li></li>').addClass('project').text(data["project"]))
-                .append($('<li></li>').addClass('date').text(data["date"]))
+                .append($('<li></li>').addClass('fullName').text(data.fullName))
+                .append($('<li></li>').addClass('jobTitle').text(data.jobTitle))
+                .append($('<li></li>').addClass('grade').text(data.grade))
+                .append($('<li></li>').addClass('allocationStatus').text(data.allocationStatus))
+                .append($('<li></li>').addClass('project').text(data.project))
+                .append($('<li></li>').addClass('date').text(data.date))
                 .append($('<img>').addClass("down").attr({
                     src: "images/down.png"
                 }))
@@ -28,16 +28,16 @@ iuliana.tableGenerator = (function() {
                 .append($('<div></div>').addClass('infoText')
                     .append($('<div></div>').addClass('infoTextItem')
                         .append($('<div></div>').addClass('leftText').text('Delivery Unit:'))
-                        .append($('<div></div>').addClass('rightText').addClass('deliveryUnit').text(data["deliveryUnit"]))
+                        .append($('<div></div>').addClass('rightText').addClass('deliveryUnit').text(data.deliveryUnit))
                         .append($('<div></div>').addClass('clear'))
                         .append($('<div></div>').addClass('leftText').text('Date of start:'))
-                        .append($('<div></div>').addClass('rightText').addClass('dateOfStart').text(data["dateOfStart"]))
+                        .append($('<div></div>').addClass('rightText').addClass('dateOfStart').text(data.dateOfStart))
                         .append($('<div></div>').addClass('clear'))
                         .append($('<div></div>').addClass('leftText').text('Line manager:'))
-                        .append($('<div></div>').addClass('rightText').addClass('lineManager').text(data["lineManager"]))
+                        .append($('<div></div>').addClass('rightText').addClass('lineManager').text(data.lineManager))
                         .append($('<div></div>').addClass('clear'))
                         .append($('<div></div>').addClass('leftText').text('Project Manager:'))
-                        .append($('<div></div>').addClass('rightText').addClass('projectManager').text(data["projectManager"]))
+                        .append($('<div></div>').addClass('rightText').addClass('projectManager').text(data.projectManager))
                         .append($('<div></div>').addClass('clear'))
                     )
                 )
@@ -58,12 +58,12 @@ iuliana.tableGenerator = (function() {
         for (var i = 0; i < elemListEdit.length; i++) {
             elemListEdit[i].onclick = function(e) {
                 var moreInfoElement = e.target.parentNode.parentNode.children[2];
-                if (moreInfoElement.offsetParent != null) {
+                if (moreInfoElement.offsetParent !== null) {
                     moreInfoElement.style.display = 'none';
                 } else {
                     moreInfoElement.style.display = 'block';
                 }
-            }
+            };
         } //for
     }
     
@@ -116,7 +116,7 @@ iuliana.tableGenerator = (function() {
                 allocationStatus: "Test",
                 project: "Test",
                 date: "10/05/2014"
-            }               
+            };               
             
             iuliana.tableGenerator.addRow(table, newEmployee);
             iuliana.tableGenerator.makeEditableTable('.editableTable');
@@ -134,15 +134,32 @@ iuliana.tableGenerator = (function() {
     } //tableConstruct: function()
 
     function makeEditableTable(elementSelector) {
-        var rows = document.querySelectorAll(elementSelector + ' .nameInformation ul');
-        var childrenLi = [];
-        for (var i = 0; i < rows.length; i++) {
-            childrenLi[i] = rows[i].querySelectorAll('li');
-        }
-        for (var i = 0; i < childrenLi.length; i++) {
+    
+    
+        var childrenLi = rowsEditable(elementSelector);
+        
+        for ( i = 0, len = childrenLi.length; i < len ; i++) {
             for (var j = 0; j < childrenLi[i].length; j++) {
 
-                childrenLi[i][j].onclick = function(e) {
+                test(childrenLi[i][j]);
+            }
+        }
+    }
+
+
+    function rowsEditable(elementSelector) {
+        var rows = document.querySelectorAll(elementSelector + ' .nameInformation ul'),
+            childrenLi = [];
+        for (var i = 0, len =  rows.length; i < len ; i++) {
+            childrenLi[i] = rows[i].querySelectorAll('li');
+        }
+
+        return childrenLi;
+
+    }
+
+    var test = function(el) {
+            el.onclick = function(e) {
                     var oldValue = e.target.textContent;
                     e.target.innerHTML = "<input type = 'text' value = '" + oldValue + "'>";
                     var childNodes = e.target.childNodes;
@@ -150,11 +167,11 @@ iuliana.tableGenerator = (function() {
 
                     e.target.onblur = function(e2) {
                         e.target.parentNode.innerHTML = e2.target.value;
-                    }
-                }
-            }
-        }
-    }
+                    };
+                };
+        };
+
+
 
     function tableFilter(table) {
         $('.filter input').keypress(function(e) {
